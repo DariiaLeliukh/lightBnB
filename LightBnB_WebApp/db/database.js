@@ -81,7 +81,6 @@ const getAllReservations = function(guest_id, limit = 10) {
             ORDER BY start_date
             LIMIT $2;`, [guest_id, limit])
     .then((result) => {
-      console.log(result.rows);
       return result.rows;
     })
     .catch((err) => {
@@ -154,7 +153,6 @@ const getAllProperties = function(options, limit = 10) {
   return pool
     .query(queryString, queryParams)
     .then((result) => {
-      //console.log(result.rows);
       return result.rows;
     })
     .catch((err) => {
@@ -192,7 +190,6 @@ const addProperty = function(property) {
   return pool
     .query(queryString, values)
     .then((result) => {
-      //console.log(result.rows);
       return result.rows;
     })
     .catch((err) => {
